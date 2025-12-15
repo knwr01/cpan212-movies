@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1 List of Movies
+  if movies.length === 0
+    p No movies yet.
+  else
+    ul
+      each m in movies
+        li
+          a(href=`/movies/${m._id}`) #{m.name} (#{m.year})
